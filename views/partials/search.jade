@@ -1,0 +1,17 @@
+<div ng-controller="spotifyController">
+<br />
+<form class="well form-search">
+<label>Search:</label>
+<input type="text" ng-model="keywords" class="input-medium search-query" placeholder="Keywords...">
+<button href="/" type="submit" class="btn" ng-click="search()">Search</button>
+</form>
+<div class="row"   >
+<div  class="col-xs-4" ng-repeat="artist in performers.artists.items">
+<a href="/albums" class="thumbnail btn" ng-click="clickEvent($event)">
+<img class="artist-images" src={{artist.images[1].url}} alt={{artist.id}} style="width:304px;height:228px">
+<div class="caption">
+<h3>{{artist.name}}</h3>
+</div>        
+</a>
+</div>
+</div>

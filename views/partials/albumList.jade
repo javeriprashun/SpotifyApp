@@ -1,0 +1,10 @@
+<div ng-controller="albumController">
+<div class="row"   >
+<div  class="col-xs-4" ng-repeat="album in albums.items">
+<a href="/tracks" class="thumbnail btn" ng-click="clickAlbumEvent($event)">
+<img class="artist-images" src={{album.images[1].url}} alt={{album.id}} style="width:304px;height:228px">
+<div class="caption">
+<p class="album-names" >{{album.name}}</p>
+</div>        
+</a>
+</div>
