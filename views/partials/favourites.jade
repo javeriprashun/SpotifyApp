@@ -1,0 +1,49 @@
+<div ng-controller="spotifyController">
+<div class="col-md-2 pull-left">
+<ul class="nav nav-pills nav-stacked">
+<li><a href="/favourites">Favourites</a></li>
+<li><a href="/">Artists</a></li>
+<li><a href="/albums">Albums</a></li>
+<li><a href="/tracks">Tracks</a></li>
+</ul>
+</div>
+<div class="col-md-10 pull-right">
+<br /> 
+<h2>Favourite Artists</h2>
+<div class="row">
+<div class="col-sm-6 col-md-4" ng-repeat="artist in performers">
+<div class="thumbnail">
+<a href="/albums" class="thumbnail btn" ng-click="clickEvent($event)">
+<img class="artist-images" src={{artist.images[1].url}} alt={{artist.id}} style="width:304px;height:228px"> 
+</a>    
+<div class="caption">
+<p class="album-names" >{{artist.name}}</p>
+</div>
+</div>
+</div>
+<h2>Favourite Albums</h2>
+<div class="row">
+<div class="col-sm-6 col-md-4" ng-repeat="album in albums">
+<div class="thumbnail">
+<a href="/tracks" class="thumbnail btn" ng-click="clickAlbumEvent($event)">
+<img class="artist-images" src={{album.images[1].url}} alt={{album.id}} style="width:304px;height:228px">
+</a>
+<div class="caption">
+<p class="album-names" >{{album.name}}</p>
+</div>
+</div>
+</div>
+</div>
+<h2>Favourite Tracks</h2>
+<div class="panel panel-default col-md-10 pull-right" ng-repeat="track in tracks">
+<div class="panel-body">
+<h4 class="album-names col-md-1"> {{track.track_number}}</h4>
+<h5 class="album-names col-md-4"> {{track.name}}</h5>
+<audio controls class="album-names col-md-4">
+<source ng-src={{track.preview_url}} type="audio/mpeg">
+</audio>
+</div>
+</div>
+</div>
+</div>
+</div>

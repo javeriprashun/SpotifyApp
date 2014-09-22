@@ -1,10 +1,27 @@
 <div ng-controller="albumController">
-<div class="row"   >
-<div  class="col-xs-4" ng-repeat="album in albums.items">
+<br />
+<div class="col-md-2 pull-left">
+<ul class="nav nav-pills nav-stacked">
+<li><a href="/favourites">Favourites</a></li>
+<li><a href="/">Artists</a></li>
+<li><a href="/albums">Albums</a></li>
+<li><a href="/tracks">Tracks</a></li>
+</ul>
+</div>
+<div class="col-md-10 pull-right" >
+<div class="row">
+<div class="col-sm-6 col-md-4" ng-repeat="album in albums.items">
+<div class="thumbnail">
 <a href="/tracks" class="thumbnail btn" ng-click="clickAlbumEvent($event)">
 <img class="artist-images" src={{album.images[1].url}} alt={{album.id}} style="width:304px;height:228px">
+</a>
 <div class="caption">
 <p class="album-names" >{{album.name}}</p>
-</div>        
-</a>
+<p class="btn btn-primary"  role="button" data={{album}}  ng-click="clickAddtoFavouriteAlbumsEvent($event)">Add</p>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>

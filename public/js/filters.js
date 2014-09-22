@@ -3,8 +3,8 @@
 /* Filters */
 
 angular.module('spotifyApp.filters', []).
-  filter('interpolate', function (version) {
-    return function (text) {
-      return String(text).replace(/\%VERSION\%/mg, version);
+filter('trusted', ['$sce', function ($sce) {
+    return function(url) {
+        return $sce.trustAsResourceUrl(url);
     };
-  });
+}]);
