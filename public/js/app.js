@@ -10,8 +10,11 @@ angular.module('spotifyApp', [
 ]).
 config(function ($routeProvider, $locationProvider, $sceDelegateProvider) {
 	
-	$sceDelegateProvider.resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/p\.scdn\.co\/mp3-preview/.+$')]);	
+	$sceDelegateProvider.resourceUrlWhitelist(['self',
+	                                            new RegExp('^(http[s]?):\/\/p\.scdn\.co\/mp3-preview/.+$')
+	                                          , new RegExp('^(http[s]?):\/\/i\.scdn\.co\/image/.+$')]);	
   
+	//https://i.scdn.co/image/af048aba253087970988645c291e098376a5b5e8 
 	$routeProvider.
     when('/', {
       templateUrl: 'partials/search',

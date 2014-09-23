@@ -1,17 +1,17 @@
-<div ng-controller="albumController">
 <br />
-<div class="col-md-2 pull-left">
-<ul class="nav nav-pills nav-stacked">
+<div class="panel panel-default col-md-2 pull-left">
+<div class="panel-body">
+<ul class="nav nav-pills nav-stacked nav-box">
 <li><a href="/favourites">Favourites</a></li>
-<li><a href="/">Artists</a></li>
-<li><a href="/albums">Albums</a></li>
-<li><a href="/tracks">Tracks</a></li>
+<li><a class="active" href="/">Search</a></li>
 </ul>
 </div>
-<div class="panel panel-default col-md-10 pull-right" ng-repeat="track in tracks.items">
+</div>
+<div ng-controller="albumController">
+<div class="panel panel-default col-md-9 pull-right" ng-repeat="track in tracks.items">
 <div class="panel-body">
 <h4 class="album-names col-md-1"> {{track.track_number}}</h4>
-<h5 class="album-names col-md-4"> {{track.name}}</h5>
+<h5 class="album-names col-md-3"> {{track.name}}</h5>
 <audio controls class="album-names col-md-4">
 <source ng-src={{track.preview_url}} type="audio/mpeg">
 </audio>

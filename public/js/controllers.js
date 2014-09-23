@@ -47,7 +47,6 @@ angular.module('spotifyApp.controllers', [ ]).
         	                        	set.clear();
         	                        	set.addAll(favArtistList);
         	                        	$scope.performers=set.list();
-        	                        
         	                        }
         	                        else{
         	                        	console.log("No artist Added to Favourites..")
