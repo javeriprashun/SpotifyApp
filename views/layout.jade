@@ -5,18 +5,20 @@ html(lang='en', ng-app='spotifyApp')
             meta(name='viewport', content='width=device-width,initial-scale=1, user-scalable=no')
             title= title
             link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css')
-            link(rel='stylesheet', href='/stylesheets/style.css')
-            script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js')
-            script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.min.js')
-            script(src='js/app.js')
-            script(src='js/services.js')
-            script(src='js/controllers.js')
-            script(src='js/filters.js')
-            script(src='js/directives.js')   
-                      
+            link(rel='stylesheet', href='/stylesheets/style.css')           
           body
             nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
               div.navbar-header
                 a.navbar-brand(href='#/spotify')= title
             div.container
               div(ng-view)
+         footer
+            script(src='js/lib/angular/angular.js')
+            script(src='js/lib/angular/angular-route.min.js')
+            script(src='js/lib/angular/angular-resource.js')
+            script(src='js/lib/app/helpers.js')
+            script(src='js/app.js')
+            script(src='js/services.js')
+            script(src='js/controllers.js')
+            script(src='js/filters.js')
+            script(src='js/directives.js')   

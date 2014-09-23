@@ -1,7 +1,20 @@
-<div ng-controller="albumController">
 <br />
-<div class="panel panel-default" ng-repeat="track in tracks.items">
+<div class="panel panel-default col-md-2 pull-left">
 <div class="panel-body">
-<h3>{{track.name}}</h3>
+<ul class="nav nav-pills nav-stacked nav-box">
+<li><a href="/favourites">Favourites</a></li>
+<li><a class="active" href="/">Search</a></li>
+</ul>
+</div>
+</div>
+<div ng-controller="albumController">
+<div class="panel panel-default col-md-9 pull-right" ng-repeat="track in tracks.items">
+<div class="panel-body">
+<h4 class="album-names col-md-1"> {{track.track_number}}</h4>
+<h5 class="album-names col-md-3"> {{track.name}}</h5>
+<audio controls class="album-names col-md-4">
+<source ng-src={{track.preview_url}} type="audio/mpeg">
+</audio>
+<h4 class="album-names col-md-1 pull-right btn  btn-primary" role="button" data={{track}}  ng-click="clickAddtoFavouriteTracksEvent($event)" >Add</h4>
 </div>
 </div>

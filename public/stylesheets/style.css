@@ -1,10 +1,15 @@
 body {
-  padding: 50px;
+ padding-top: 50px;
+    padding-right: 50px;
+    padding-bottom: 25px;
+    padding-left: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
-}
-
-.album-names{  color: #00B7FF;}
+a { color: #00B7FF;}
+.album-names{  color: black;}
+.search-box{height:50px;}
+.search-button{height:50px;width:100px;}
+.nav-box{ padding: 10px;}
+.linker{text-decoration: none;font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;color:black;}
+.linker hover {text-decoration: none;}

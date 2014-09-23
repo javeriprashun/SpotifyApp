@@ -1,15 +1,21 @@
 'use strict';
 
-// Declare app level module which depends on filters, and services
 
 angular.module('spotifyApp', [
   'spotifyApp.controllers',
   'spotifyApp.filters',
   'spotifyApp.services',
-  'spotifyApp.directives'
+  'spotifyApp.directives',
+  'ngRoute'
 ]).
-config(function ($routeProvider, $locationProvider) {
-  $routeProvider.
+config(function ($routeProvider, $locationProvider, $sceDelegateProvider) {
+	
+	$sceDelegateProvider.resourceUrlWhitelist(['self',
+	                                            new RegExp('^(http[s]?):\/\/p\.scdn\.co\/mp3-preview/.+$')
+	                                          , new RegExp('^(http[s]?):\/\/i\.scdn\.co\/image/.+$')]);	
+  
+	//https://i.scdn.co/image/af048aba253087970988645c291e098376a5b5e8 
+	$routeProvider.
     when('/', {
       templateUrl: 'partials/search',
       controller: 'spotifyController'
@@ -18,6 +24,10 @@ config(function ($routeProvider, $locationProvider) {
         templateUrl: 'partials/albumList',
          controller: 'albumController'
       }).
+      when('/favourites', {
+          templateUrl: 'partials/favourites',
+           controller: 'favouritesController'
+        }).
       when('/tracks', {
           templateUrl: 'partials/trackList',
            controller: 'trackController'
